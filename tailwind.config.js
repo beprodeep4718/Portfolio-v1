@@ -14,7 +14,7 @@ export default {
         quinary: '#78C679',
         senary: '#F79F1F',
         septenary: '#C70039',
-        cyenPrimary: '#15F5BA',
+        cyenH: '#15F5BA',
         
       }
     },
