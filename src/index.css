@@ -32,3 +32,18 @@ html, body {
 ::-webkit-scrollbar {
   display: none !important;
 }
+
+form .input-div {
+  display: flex;
+  flex-direction: column !important;
+  gap: 5px;
+}
+input, textarea {
+  background: transparent;
+  border-bottom: 2px solid #15F5BA;
+  outline: none;
+  padding: 4px 6px;
+  width: 100%;
+}
+
+

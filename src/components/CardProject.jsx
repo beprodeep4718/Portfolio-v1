@@ -14,7 +14,7 @@ const CardProject = ({ project }) => {
       </div>
       <div className="flex-1 flex items-start justify-start gap-2 flex-col font-[SplineSans]">
         <h1 className="text-2xl font-bold flex items-center justify-between w-full">
-          <a href=""><span>{project.title}</span></a>
+          <a href={project.link} target="_blank"><span>{project.title} ↗</span></a>
           <a href={project.github} target="_blank" className="font-thin">
             <i className="ri-github-line"></i>
           </a>

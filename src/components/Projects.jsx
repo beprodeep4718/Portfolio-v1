@@ -15,7 +15,7 @@ const Projects = () => {
     const project2 = {
         title: "Blog-Website",
         description: "You can create your own blog and it has other CURD operations",
-        link: "https://example.com",
+        link: "https://blog-website-4ueh.onrender.com/",
         github: "https://github.com/beprodeep4718/Blog-website",
         image: "/assets/images/project2.png",
         technology: ["NodeJS", "MongoDB", "Ejs"]
@@ -23,7 +23,7 @@ const Projects = () => {
     const project3 = {
         title: "Weather-App",
         description: "Weather temperature checker of your location",
-        link: "https://example.com",
+        link: "https://beprodeep4718.github.io/weatherapp/",
         github: "https://github.com/beprodeep4718/weatherapp",
         image: "/assets/images/project3.png",
         technology: ["HTML", "CSS", "JavaScript"]

@@ -2,7 +2,7 @@ import { FaRegFilePdf } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <div className="fixed w-full px-32 py-5 flex justify-between items-center bg-zinc-900/70 backdrop-blur-sm">
+    <div className="fixed z-30 w-full px-32 py-5 flex justify-between items-center bg-zinc-900/70 backdrop-blur-sm">
         <h1 className="text-3xl font-bold font-[Roboto-Bold]">&lt;<span className="text-[#15F5BA]">/</span>Bepro<span className="text-[#15F5BA]">.</span>&gt;</h1>
         <nav className="flex justify-center items-center gap-5 font-[SplineSans] font-medium">
             <h1>Home</h1>
