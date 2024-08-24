@@ -1,4 +1,3 @@
-import { useState } from "react"
 import CardProject from "./CardProject"
 
 
@@ -31,7 +30,7 @@ const Projects = () => {
     
 
   return (
-    <div className="project-section w-full px-32 py-10 h-screen space-y-8">
+    <div id="projects" className="project-section w-full px-32 py-10 h-screen space-y-8">
         <div className="flex items-center w-1/2 gap-5">
           <h1 className="text-4xl text-cyenH font-bold font-[SplineSans] uppercase tracking-wide">
             Projects

@@ -1,4 +1,31 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
 const AboutSection = () => {
+  const textH1 = useRef(null);
+  const headingText = "About me";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".text span", {
+      y: 80,
+      duration: 1,
+      opacity: 0,
+      delay: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".text",
+        scroller: "body",
+        start: "top 90%",
+        end: "top 0%",
+        // markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
+      },
+    });
+  });
+
   const skills = [
     "HTML",
     "CSS",
@@ -8,12 +35,22 @@ const AboutSection = () => {
     "React",
     "Next.Js",
     "C/C++",
-    "Tailwindcss"
+    "Tailwindcss",
   ];
   return (
-    <div className="about-section px-32 py-10 w-full h-screen flex flex-col items-start justify-center">
-      <h1 className="text-9xl text-cyenH font-bold font-[SplineSans] uppercase tracking-wide">
-        About me
+    <div
+      id="about"
+      className="about-section px-32 py-10 w-full h-screen flex flex-col items-start justify-center"
+    >
+      <h1
+        ref={textH1}
+        className="text text-9xl overflow-hidden text-cyenH font-bold font-[SplineSans] uppercase tracking-wide"
+      >
+        {headingText.split("").map((letter, index) => (
+          <span className="inline-block" key={index}>
+            {letter}
+          </span>
+        ))}
       </h1>
       <div className="w-full flex items-start justify-center mt-10 gap-10">
         <div className="w-1/2 flex-1">

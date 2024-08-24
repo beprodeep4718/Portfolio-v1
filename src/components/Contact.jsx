@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div className="w-full px-32 py-10 flex items-center justify-center gap-10">
+    <div id="contact" className="w-full px-32 py-10 flex items-center justify-center gap-10">
       <div className="part1 w-1/2 h-full grid place-items-center">
         <img
           src="./assets/images/contact.svg"
