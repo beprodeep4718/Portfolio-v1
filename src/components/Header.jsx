@@ -1,10 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FaRegFilePdf } from "react-icons/fa";
 
 const Header = () => {
   const header = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
   // GSAP animation for the header text
   useGSAP(
     () => {
@@ -18,6 +21,19 @@ const Header = () => {
     },
     { scope: header }
   );
+
+  // GSAP animation for the mobile menu
+  useGSAP(
+    () => {
+      if (isMenuOpen) {
+        gsap.to(menuRef.current, { x: 0, duration: 0.5, ease: "power3.inOut" });
+      } else {
+        gsap.to(menuRef.current, { x: "-100%", duration: 0.5, ease: "power3.inOut" });
+      }
+    },
+    [isMenuOpen]
+  );
+
   return (
     <div
       ref={header}
@@ -31,32 +47,46 @@ const Header = () => {
         <span className="inline-block">&gt;</span>
       </h1>
       <div className="nav-cont hidden lg:block">
-        <nav className="flex flex-1  cursor-pointer justify-center items-center gap-5 font-[SplineSans] font-medium">
-          <h1>
-            <a href="#home">Home</a>
-          </h1>
-          <h1>
-            <a href="#about">About</a>
-          </h1>
-          <h1>
-            <a href="#projects">Projects</a>
-          </h1>
-          <h1>
-            <a href="#contact">Contacts</a>
-          </h1>
+        <nav className="flex flex-1 cursor-pointer justify-center items-center gap-5 font-[SplineSans] font-medium">
+          <h1><a href="#home">Home</a></h1>
+          <h1><a href="#about">About</a></h1>
+          <h1><a href="#projects">Projects</a></h1>
+          <h1><a href="#contact">Contacts</a></h1>
           <h1 className="px-4 py-2 border-2 border-cyenH rounded-lg hover:bg-cyenH hover:text-zinc-800 transition ease-linear flex items-center gap-2 justify-start">
-            <a
-              href="./assets/res/MyResume.pdf"
-              className="flex items-center gap-2"
-              target="_blank"
-            >
+            <a href="./assets/res/MyResume.pdf" className="flex items-center gap-2" target="_blank">
               <FaRegFilePdf />
               Resume
             </a>
           </h1>
         </nav>
       </div>
-        <i className="ri-menu-fill text-2xl lg:hidden"></i>
+      <i 
+        className="ri-menu-fill text-2xl lg:hidden cursor-pointer" 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      ></i>
+
+      {/* Mobile Menu */}
+      <div
+        ref={menuRef}
+        className="fixed top-0 left-0 h-screen w-2/3 bg-zinc-900 p-8 z-40 transform -translate-x-full lg:hidden"
+      >
+        <i 
+          className="ri-close-fill text-2xl cursor-pointer" 
+          onClick={() => setIsMenuOpen(false)}
+        ></i>
+        <nav className="flex flex-col mt-8 gap-5 font-[SplineSans] font-medium">
+          <h1><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></h1>
+          <h1><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></h1>
+          <h1><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></h1>
+          <h1><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contacts</a></h1>
+          <h1 className="px-4 py-2 border-2 border-cyenH rounded-lg hover:bg-cyenH hover:text-zinc-800 transition ease-linear flex items-center gap-2 justify-start">
+            <a href="./assets/res/MyResume.pdf" className="flex items-center gap-2" target="_blank">
+              <FaRegFilePdf />
+              Resume
+            </a>
+          </h1>
+        </nav>
+      </div>
     </div>
   );
 };

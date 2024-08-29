@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const HomeSection = () => {
   const container = useRef();
+  const iconRefs = useRef([]);
 
   useGSAP(
     () => {
@@ -22,6 +23,33 @@ const HomeSection = () => {
     },
     { scope: container }
   );
+
+  useEffect(() => {
+    iconRefs.current.forEach((icon, i) => {
+      if (icon) {
+        gsap.fromTo(
+          icon,
+          { y: 0, scale: 1 },
+          {
+            y: -10,
+            scale: 1.2,
+            duration: 0.3,
+            paused: true,
+            ease: "power1.inOut",
+            onHover: true,
+          }
+        );
+
+        icon.addEventListener("mouseenter", () => {
+          gsap.to(icon, { y: -10, scale: 1.2, duration: 0.3 });
+        });
+
+        icon.addEventListener("mouseleave", () => {
+          gsap.to(icon, { y: 0, scale: 1, duration: 0.3 });
+        });
+      }
+    });
+  }, []);
 
   return (
     <div
@@ -47,10 +75,30 @@ const HomeSection = () => {
           </h1>
         </div>
         <div className="icons lg:text-3xl text-xl font-light flex gap-5 items-center">
-          <i className="ri-linkedin-fill"></i>
-          <i className="ri-instagram-line"></i>
-          <i className="ri-facebook-box-fill "></i>
-          <i className="ri-github-line"></i>
+          <a
+            href="https://www.linkedin.com/in/beprodeep-das-095043290"
+            ref={(el) => (iconRefs.current[0] = el)}
+          >
+            <i className="ri-linkedin-fill"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/beprodeep4718"
+            ref={(el) => (iconRefs.current[1] = el)}
+          >
+            <i className="ri-instagram-line"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/share/65wzXeF8oxqcp6EG/?mibextid=qi2Omg"
+            ref={(el) => (iconRefs.current[2] = el)}
+          >
+            <i className="ri-facebook-box-fill"></i>
+          </a>
+          <a
+            href="https://github.com/beprodeep4718"
+            ref={(el) => (iconRefs.current[3] = el)}
+          >
+            <i className="ri-github-line"></i>
+          </a>
           <span className="h-[1px] bg-cyenH flex-grow"></span>
         </div>
       </div>

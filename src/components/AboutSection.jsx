@@ -37,6 +37,7 @@ const AboutSection = () => {
     "Next.Js",
     "C/C++",
     "Tailwindcss",
+    "GSAP"
   ];
   return (
     <div
