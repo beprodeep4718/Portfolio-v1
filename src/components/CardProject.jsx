@@ -4,7 +4,7 @@ const CardProject = ({ project }) => {
     //bg-cyenH px-2 py-1 text-zinc-900 rounded-full 
 
   return (
-    <div className="card flex items-center justify-start flex-col relative w-[24vw] h-[34vw] bg-zinc-800 px-6 py-6 rounded-md gap-4">
+    <div className="card flex items-center justify-start flex-col relative lg:w-[24vw] lg:h-[34vw] h-[100vw] bg-zinc-800 px-6 py-6 rounded-md gap-4">
       <div className="flex-1 h-1/2 w-full">
         <img
           src={project.image}

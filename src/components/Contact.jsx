@@ -1,7 +1,10 @@
 const Contact = () => {
   return (
-    <div id="contact" className="w-full px-32 py-10 flex items-center justify-center gap-10">
-      <div className="part1 w-1/2 h-full grid place-items-center">
+    <div
+      id="contact"
+      className="w-full lg:px-32 px-6 lg:py-10 py-6 flex items-center justify-center gap-10 flex-col lg:flex-row"
+    >
+      <div className="part1 lg:w-1/2 w-full h-full grid place-items-center">
         <img
           src="./assets/images/contact.svg"
           alt=""
@@ -9,14 +12,14 @@ const Contact = () => {
           width={500}
         />
       </div>
-      <div className="part2 w-1/2 h-full">
+      <div className="part2 lg:w-1/2 w-full h-full">
         <div className="flex flex-col justify-center items-center gap-8 w-full">
-          <h1 className="text-5xl font-[SplineSans] capitalize text-cyenH font-bold">
+          <h1 className="lg:text-5xl text-3xl font-[SplineSans] capitalize text-cyenH font-bold tracking-tight leading-none">
             get in touch
           </h1>
           <form
             action=""
-            className="w-full grid grid-cols-2  gap-8 font-[SplineSans] text-xl"
+            className="w-full grid lg:grid-cols-2 grid-cols-1 gap-8 font-[SplineSans] text-xl"
           >
             <div className="input-div">
               <label htmlFor="name">Name</label>
@@ -26,7 +29,7 @@ const Contact = () => {
               <label htmlFor="email">Email</label>
               <input type="email" name="email" />
             </div>
-            <div className="input-div col-span-2">
+            <div className="input-div lg:col-span-2">
               <label htmlFor="message">Message</label>
               <textarea
                 name="message"
@@ -36,7 +39,7 @@ const Contact = () => {
                 className=""
               ></textarea>
             </div>
-            <div className="col-span-1">
+            <div className="lg:col-span-1">
               <button className="w-full px-6 py-2 uppercase font-[SplineSans] border-2 border-cyenH font-bold hover:bg-cyenH hover:text-zinc-900 transition ease-in rounded-md">
                 Submit
               </button>

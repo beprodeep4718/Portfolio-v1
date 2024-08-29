@@ -19,8 +19,9 @@ const AboutSection = () => {
       scrollTrigger: {
         trigger: ".text",
         scroller: "body",
-        start: "top 90%",
-        end: "top 0%",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: 3,
         // markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
       },
     });
@@ -40,11 +41,11 @@ const AboutSection = () => {
   return (
     <div
       id="about"
-      className="about-section px-32 py-10 w-full h-screen flex flex-col items-start justify-center"
+      className="about-section lg:px-32 px-6 lg:py-10 w-full lg:h-screen flex flex-col items-start justify-center"
     >
       <h1
         ref={textH1}
-        className="text text-9xl overflow-hidden text-cyenH font-bold font-[SplineSans] uppercase tracking-wide"
+        className="text lg:text-9xl text-5xl overflow-hidden text-cyenH font-bold font-[SplineSans] uppercase tracking-wide leading-none"
       >
         {headingText.split("").map((letter, index) => (
           <span className="inline-block" key={index}>
@@ -52,8 +53,8 @@ const AboutSection = () => {
           </span>
         ))}
       </h1>
-      <div className="w-full flex items-start justify-center mt-10 gap-10">
-        <div className="w-1/2 flex-1">
+      <div className="w-full flex items-start justify-center mt-10 gap-10 flex-col lg:flex-row">
+        <div className="lg:w-1/2 w-full flex-1">
           <p className="leading-7 tracking-wide font-[SplineSans]">
             Hello! I&apos;m Beprodeep Das a passionate web developer currently
             pursuing my studies at{" "}
@@ -71,18 +72,18 @@ const AboutSection = () => {
             about my work.
           </p>
         </div>
-        <div className="w-1/2 flex-1 space-y-4">
-          <h1 className="text-5xl uppercase font-bold font-[SplineSans] text-cyenH">
+        <div className="lg:w-1/2 w-full flex-1 space-y-4">
+          <h1 className="lg:text-5xl text-3xl uppercase font-bold font-[SplineSans] text-cyenH">
             What I Know{" "}
           </h1>
           <p className="font-[SplineSans]">
             Here are a few technologies I have been working with recently:
           </p>
-          <ul className="grid grid-cols-2 gap-x-5 gap-y-2">
+          <ul className="grid grid-cols-2 lg:gap-x-5 gap-y-2">
             {skills.map((elm, index) => (
               <li
                 key={index}
-                className="text-xl font-[SplineSans] text-gray-600 hover:text-gray-400 transition ease-linear cursor-default"
+                className="lg:text-xl text-sm font-[SplineSans] text-gray-300 hover:text-cyenH transition ease-linear cursor-default"
               >
                 <span className="text-cyenH">‣</span> {elm}
               </li>

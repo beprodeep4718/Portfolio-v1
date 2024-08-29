@@ -30,9 +30,9 @@ const Projects = () => {
     
 
   return (
-    <div id="projects" className="project-section w-full px-32 py-10 h-screen space-y-8">
-        <div className="flex items-center w-1/2 gap-5">
-          <h1 className="text-4xl text-cyenH font-bold font-[SplineSans] uppercase tracking-wide">
+    <div id="projects" className="project-section w-full lg:px-32 px-7 py-10 lg:h-screen space-y-8">
+        <div className="flex items-center lg:w-1/2 w-full gap-5">
+          <h1 className="lg:text-4xl text-2xl text-cyenH font-bold font-[SplineSans] uppercase tracking-wide">
             Projects
           </h1>
           <div className="h-[2px] bg-zinc-600 flex-grow"></div>
