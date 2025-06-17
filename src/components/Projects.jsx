@@ -4,14 +4,14 @@ import CardProject from "./CardProject"
 const Projects = () => {
 
     const project1 = {
-        title: "Anjusa-Web",
-        description: "This is a web application, for a art-academic organization",
-        link: "https://anjusa.in",
-        github: "https://github.com/beprodeep4718/Anjusa-project",
-        image: "/assets/images/project1.jpg",
-        technology: ["NodeJS", "MongoDB", "React", "Express"]
+        title: "Techtronics",
+        description: "A website for ECE Fest of JGEC, where you can register for events and get all the information about the fest, also it has its own admin panel where you can add, delete and update events.",
+        link: "https://techtronics.jgec.tech/",
+        github: "https://github.com/beprodeep4718/ece-fest-jgec",
+        image: "/assets/images/project3.png",
+        technology: ["NodeJS", "MongoDB", "React", "Express", "Cloudinary", "DaisyUi", "TailwindCSS"]
     }
-    const project2 = {
+    const project3 = {
         title: "Blog-Website",
         description: "You can create your own blog and it has other CURD operations",
         link: "https://blog-website-4ueh.onrender.com/",
@@ -19,13 +19,13 @@ const Projects = () => {
         image: "/assets/images/project2.png",
         technology: ["NodeJS", "MongoDB", "Ejs"]
     }
-    const project3 = {
-        title: "Weather-App",
-        description: "Weather temperature checker of your location",
-        link: "https://beprodeep4718.github.io/weatherapp/",
-        github: "https://github.com/beprodeep4718/weatherapp",
-        image: "/assets/images/project3.png",
-        technology: ["HTML", "CSS", "JavaScript"]
+    const project2 = {
+        title: "Chatrix",
+        description: "A real-time chat application where you can chat with your friends and also create groups, it has a user-friendly interface and is built with the MERN stack.",
+        link: "https://chat-app-8f2r.onrender.com/",
+        github: "https://github.com/beprodeep4718/chat-app",
+        image: "/assets/images/project1.png",
+        technology: ["NodeJS", "MongoDB", "Express", "Socket.io", "Cloudinary", "DaisyUi", "TailwindCSS", "React",]
     }
     
 
